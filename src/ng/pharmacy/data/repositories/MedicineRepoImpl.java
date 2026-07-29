@@ -8,7 +8,7 @@ import java.util.List;
 public class MedicineRepoImpl implements MedicineRepo{
 
     private int nextId = 0;
-    private static List<Medicine> medicines = new ArrayList<Medicine>();
+    private static final List<Medicine> medicines = new ArrayList<>();
 
     @Override
     public Medicine save(Medicine medicine) {

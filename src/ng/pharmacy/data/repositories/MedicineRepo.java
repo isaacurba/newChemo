@@ -1,8 +1,6 @@
 package ng.pharmacy.data.repositories;
 
 import ng.pharmacy.data.models.Medicine;
-import ng.pharmacy.data.models.User;
-
 import java.util.List;
 
 public interface MedicineRepo {
