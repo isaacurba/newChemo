@@ -1,8 +1,7 @@
-package ng.pharmacy.dto.request;
+package ng.pharmacy.dto.response.authServiceResponse;
 
-public class RegisterChemistRequest {
+public class RegisterChemistResponse {
     private String userName;
-    private String password;
     private String fullName;
 
     public String getUserName() {
@@ -11,14 +10,6 @@ public class RegisterChemistRequest {
 
     public void setUserName(String userName) {
         this.userName = userName;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public String getFullName() {
