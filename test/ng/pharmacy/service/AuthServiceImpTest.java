@@ -3,8 +3,10 @@ package ng.pharmacy.service;
 import ng.pharmacy.data.repositories.UserRepoImpl;
 import ng.pharmacy.data.repositories.UserRepository;
 import ng.pharmacy.dto.request.LoginChemistRequest;
+import ng.pharmacy.dto.request.LogoutChemistRequest;
 import ng.pharmacy.dto.request.RegisterChemistRequest;
 import ng.pharmacy.dto.response.LoginChemistResponse;
+import ng.pharmacy.dto.response.LogoutChemistResponse;
 import ng.pharmacy.dto.response.RegisterChemistResponse;
 import ng.pharmacy.exceptions.InvalidPasswordException;
 import ng.pharmacy.exceptions.UserExistException;
@@ -130,7 +132,37 @@ class AuthServiceImplTest {
         assertThrows(UserNotFoundException.class, () -> authService.loginChemist(login));
     }
 
+    @Test
+    public void create1UserLoginAndLogoutUser_Test() throws InvalidPasswordException {
 
+        request.setUserName("isaacurban0");
+        request.setPassword("5231");
+        request.setFullName("Isaac Urban");
+
+        authService.registerChemist(request);
+
+        LoginChemistRequest login = new LoginChemistRequest();
+        login.setUserName("isaacurban0");
+        login.setPassword("5231");
+
+        authService.loginChemist(login);
+
+        LogoutChemistRequest logout = new LogoutChemistRequest();
+        logout.setUsername("isaacurban0");
+
+        LogoutChemistResponse response = authService.logoutChemist(logout);
+
+        assertFalse(response.isLoggedIn());
+    }
+
+    @Test
+    public void logoutUserThatDoesNotExistThrowsException_Test() {
+
+        LogoutChemistRequest logout = new LogoutChemistRequest();
+        logout.setUsername("unknownUser");
+
+        assertThrows(UserNotFoundException.class, () -> authService.logoutChemist(logout));
+    }
 
 
 
