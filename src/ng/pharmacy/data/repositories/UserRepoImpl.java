@@ -8,9 +8,9 @@ import java.util.List;
 public class UserRepoImpl implements UserRepository{
 
     private int nextId = 0;
-    private final List<User> users = new ArrayList<>();
+    private static final List<User> users = new ArrayList<>();
 
-    @Override
+     @Override
     public User save(User user) {
         if (!isNew(user)) return user;
         user.setId(++nextId);

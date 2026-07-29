@@ -14,6 +14,7 @@ class UserRepoImplTest {
     public void setUp(){
         user = new User();
         userRepo = new UserRepoImpl();
+        userRepo.clear();
     }
 
     @Test
