@@ -1,4 +1,4 @@
-package ng.pharmacy.dto.request;
+package ng.pharmacy.dto.request.authServiceRequests;
 
 public class LogoutChemistRequest {
     private String username;

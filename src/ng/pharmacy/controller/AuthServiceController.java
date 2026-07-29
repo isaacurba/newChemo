@@ -1,7 +1,7 @@
 package ng.pharmacy.controller;
 
-import ng.pharmacy.dto.request.RegisterChemistRequest;
-import ng.pharmacy.dto.response.RegisterChemistResponse;
+import ng.pharmacy.dto.request.authServiceRequests.RegisterChemistRequest;
+import ng.pharmacy.dto.response.authServiceResponse.RegisterChemistResponse;
 import ng.pharmacy.service.AuthService;
 import ng.pharmacy.service.AuthServiceImp;
 

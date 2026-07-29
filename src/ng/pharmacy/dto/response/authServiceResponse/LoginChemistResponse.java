@@ -1,4 +1,4 @@
-package ng.pharmacy.dto.response;
+package ng.pharmacy.dto.response.authServiceResponse;
 
 public class LoginChemistResponse {
     private String userName;
