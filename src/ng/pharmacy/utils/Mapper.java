@@ -4,6 +4,7 @@ import ng.pharmacy.data.models.User;
 import ng.pharmacy.dto.request.LoginChemistRequest;
 import ng.pharmacy.dto.request.RegisterChemistRequest;
 import ng.pharmacy.dto.response.LoginChemistResponse;
+import ng.pharmacy.dto.response.LogoutChemistResponse;
 import ng.pharmacy.dto.response.RegisterChemistResponse;
 
 public class Mapper {
@@ -26,6 +27,12 @@ public class Mapper {
     public static LoginChemistResponse mapLoginToUserResponse(User user) {
         LoginChemistResponse response = new LoginChemistResponse();
         response.setUserName(user.getUsername());
+        response.setLoggedIn(user.isLoggedIn());
+        return response;
+    }
+
+    public static LogoutChemistResponse mapLogoutToUserResponse(User user){
+        LogoutChemistResponse response = new LogoutChemistResponse();
         response.setLoggedIn(user.isLoggedIn());
         return response;
     }
