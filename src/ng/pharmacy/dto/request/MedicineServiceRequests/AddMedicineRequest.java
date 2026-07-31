@@ -4,10 +4,9 @@ import java.time.LocalDate;
 
 public class AddMedicineRequest {
 
+    private String userName;
     private String genericName;
-
     private String brandName;
-
     private int strength;
     private String dosageForm;
     private String manufacturer;
@@ -16,6 +15,13 @@ public class AddMedicineRequest {
     private LocalDate expiryDate;
     private int unitPrice;
     private int quantityInStock;
+
+    public String getUserName() {
+        return userName;
+    }
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
 
     public String getGenericName() {
         return genericName;

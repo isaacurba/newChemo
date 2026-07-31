@@ -25,7 +25,7 @@ class AuthServiceImplTest {
     @BeforeEach
     public void setUp() {
         userRepo = new UserRepoImpl();
-        authService = new AuthServiceImp();
+        authService = new AuthServiceImp(userRepo);
         request = new RegisterChemistRequest();
         userRepo.clear();
 
