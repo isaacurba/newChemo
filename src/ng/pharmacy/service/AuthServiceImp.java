@@ -2,6 +2,7 @@ package ng.pharmacy.service;
 
 import ng.pharmacy.data.models.User;
 import ng.pharmacy.data.repositories.UserRepoImpl;
+import ng.pharmacy.data.repositories.UserRepository;
 import ng.pharmacy.dto.request.authServiceRequests.LoginChemistRequest;
 import ng.pharmacy.dto.request.authServiceRequests.LogoutChemistRequest;
 import ng.pharmacy.dto.request.authServiceRequests.RegisterChemistRequest;
@@ -15,7 +16,11 @@ import ng.pharmacy.utils.Mapper;
 
 public class AuthServiceImp implements AuthService {
 
-    private final UserRepoImpl userRepo = new UserRepoImpl();
+    private final UserRepoImpl userRepo;
+
+    public AuthServiceImp(UserRepository userRepo) {
+        this.userRepo = new UserRepoImpl();
+    }
 
     @Override
     public RegisterChemistResponse registerChemist(RegisterChemistRequest request) {
