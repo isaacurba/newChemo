@@ -8,8 +8,8 @@ public interface MedicineRepo {
     Medicine save(Medicine medicine);
     Medicine findById(int id);
     List<Medicine> findAll();
-    Medicine searchByBrandName(String brandName);
-    Medicine searchByGenericName(String genericName);
+    List<Medicine> searchByBrandName(String brandName);
+    List<Medicine> searchByGenericName(String genericName);
     void deleteById(int id);
     int count();
     void clear();

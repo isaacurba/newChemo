@@ -31,19 +31,23 @@ public class MedicineRepoImpl implements MedicineRepo{
     }
 
     @Override
-    public Medicine searchByBrandName(String brandName) {
-        for  (Medicine medicine : medicines) {
-            if (medicine.getBrandName().equalsIgnoreCase(brandName)) return medicine;
+    public List<Medicine> searchByBrandName(String brandName) {
+        List<Medicine> foundMedicines = new ArrayList<>();
+        for (Medicine medicine : medicines) {
+            if (medicine.getBrandName().toLowerCase().contains(brandName.toLowerCase()))
+                foundMedicines.add(medicine);
         }
-        return null;
+        return foundMedicines;
     }
 
     @Override
-    public Medicine searchByGenericName(String genericName) {
+    public List<Medicine> searchByGenericName(String genericName) {
+        List<Medicine> foundMedicines = new ArrayList<>();
         for (Medicine medicine : medicines) {
-            if  (medicine.getGenericName().equalsIgnoreCase(genericName)) return medicine;
+            if (medicine.getBrandName().toLowerCase().contains(genericName.toLowerCase()))
+                foundMedicines.add(medicine);
         }
-        return null;
+        return foundMedicines;
     }
 
     @Override
